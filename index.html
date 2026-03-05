@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNG Decision System – Full Version</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SheetJS for Excel export -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Go/No‑Go Decision Tool</h1>
+        <button id="newOppBtn">➕ New Opportunity</button>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Opportunities</h3>
+            <ul id="oppList"></ul>
+        </aside>
+        <main class="content">
+            <div id="formContainer">
+                <!-- Dynamic content loaded by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for entering opportunity details (hidden by default) -->
+    <div id="oppModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Opportunity Details</h2>
+            <form id="oppDetailsForm">
+                <label>Opportunity Name *</label>
+                <input type="text" id="oppName" required>
+
+                <label>Lead Implementing Office</label>
+                <input type="text" id="leadOffice" value="WV Ethiopia">
+
+                <label>Donor Name</label>
+                <input type="text" id="donorName">
+
+                <label>Opportunity Type</label>
+                <select id="oppType">
+                    <option value="Grants">Grants</option>
+                    <option value="Contracts">Contracts</option>
+                </select>
+
+                <label>Solicitation Type</label>
+                <select id="solicitationType">
+                    <option value="INT. - Call for Proposal">INT – Call for Proposal</option>
+                    <option value="LOC. - Call for Proposal">LOC – Call for Proposal</option>
+                    <option value="LRF. - Call for Proposal">LRF – Call for Proposal</option>
+                </select>
+
+                <label>Total Budget (USD)</label>
+                <input type="number" id="totalBudget" value="0">
+
+                <label>Proposal Due Date</label>
+                <input type="date" id="dueDate">
+
+                <button type="submit">Create Opportunity</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
